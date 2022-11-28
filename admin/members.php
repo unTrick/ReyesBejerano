@@ -31,7 +31,7 @@
 									while($row=mysqli_fetch_array($user_query)){
 									$id=$row['member_id']; ?>
 									 <tr class="del<?php echo $id ?>">
-                                    <td><?php echo $row['firstname']." ".$row['middlename']." ".$row['lastname']; ?></td> 
+                                    <td width="100"> <a href="<?php echo 'member_history.php?id='.$row['member_id'];?>"><span>  <?php echo $row['firstname']." ".$row['middlename']." ".$row['lastname']; ?> </span></a> </td> 
                                     <td><?php echo $row['age']; ?></td> 
                                     <td><?php echo $row['gender']; ?></td> 
                                     <td><?php echo $row['address']; ?></td> 

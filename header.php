@@ -10,10 +10,13 @@
 			<link href="css/docs.css" rel="stylesheet" media="screen">
 			<link href="css/diapo.css" rel="stylesheet" media="screen">
 			<link href="css/font-awesome.css" rel="stylesheet" media="screen">
+			<link href="css/spectrum.css" rel="stylesheet" media="screen">
 	<!-- js -->			
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/JEJS.js"></script>
     <script src="js/jquery.hoverdir.js"></script>
+	<script src="js/fabric.js"></script>
+	<script src="js/spectrum.js"></script>
 			
 		<?php session_start(); ?>	
 			        <link rel="stylesheet" type="text/css" href="css/style.css" />
