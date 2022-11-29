@@ -3,11 +3,13 @@
     <div class="container">
 
 	<div class="row">	
+        <div class="full-grid" style="text-align: center;">
+            <img src="../img/dr.png" class="img-rounded">
+        </div>
         <div class="span3">
             <?php include('sidebar.php'); ?>
         </div>
         <div class="span9">
-            <img src="../img/dr.png" class="img-rounded">
             <?php include('navbar_dasboard.php') ?>
 
             <input type="hidden" id="member_id" value="<?php echo $_GET['id'];?>">
@@ -18,7 +20,7 @@
                     <div id="drawing-mode-options">
                         <div class="pull-left" style="margin: 0px 10px;">
                             <label for="drawing-line-width">Line width</label>
-                            <span class="text" id="slider"> 30 </span> <input type="range" value="30" min="0" max="150" id="drawing-line-width">
+                            <span class="text" id="slider"> 15 </span> <input type="range" value="15" min="0" max="150" id="drawing-line-width">
                         </div>
                         <div class="pull-left" style="margin: 0px 10px;">
                             <label for="drawing-color">Line color</label>
@@ -31,17 +33,114 @@
                     </div>
                 </div>
                 <div class="full-grid pull-left" style="margin-top: 20px;">
-                    <div class="half-grid pull-left" id="canvas-container" oncontextmenu="return false" style="overflow: auto; height: 650px; outline: none; background-color: white;">
+                    <div id="canvas-container" oncontextmenu="return false" style="overflow: auto; height: 650px; outline: none; background-color: white;">
                         <canvas id="canvas"></canvas>
                     </div>
-                    <div class="half-grid pull-left">
-                        <div style="margin: 10px; text-align: center;">
-                            <span>Patient's Remarks</span>
-                            <textarea name="" id="dental_comments" class="" style="width: 90%;height: 500px; resize: none;" placeholder="Comments here...."><?php echo $row["comments"]; ?></textarea>
+                </div>
+                <div class="full-grid pull-left" style="margin-top: 20px;">
+                    <div style="text-align: center;margin:5px 0;">
+                        <span style="text-transform: uppercase; font-size: large;">Physical and Medical History</span>
+                    </div>
+                    <div style="margin:5px 0;">
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Tongue">Tongue</label>
+                                <input type="text" class="form-control" id="record-Tongue">
+                            </div>
                         </div>
-                        <div style="margin: 10px; text-align: center;">
-                            <button type="button" id="save-records">SAVE RECORDS</button>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Palate">Palate</label>
+                                <input type="text" class="form-control" id="record-Palate">
+                            </div>
                         </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Tonsils">Tonsils</label>
+                                <input type="text" class="form-control" id="record-Tonsils">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Lips">Lips</label>
+                                <input type="text" class="form-control" id="record-Lips">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin:5px 0;">
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Mouth">Floor of Mouth</label>
+                                <input type="text" class="form-control" id="record-Mouth">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Cheeks">Cheeks</label>
+                                <input type="text" class="form-control" id="record-Cheeks">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Allergies">Allergies</label>
+                                <input type="text" class="form-control" id="record-Allergies">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Heart">Heart Disease</label>
+                                <input type="text" class="form-control" id="record-Heart">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin:5px 0;">
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Blood">Blood Dyscracia</label>
+                                <input type="text" class="form-control" id="record-Blood">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Diabetes">Diabetes</label>
+                                <input type="text" class="form-control" id="record-Diabetes">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Kidney">Kidney</label>
+                                <input type="text" class="form-control" id="record-Kidney">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Liver">Liver</label>
+                                <input type="text" class="form-control" id="record-Liver">
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin:5px 0;">
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Hygiene">Hygiene</label>
+                                <input type="text" class="form-control" id="record-Hygiene">
+                            </div>
+                        </div>
+                        <div class="quarter-grid">
+                            <div class="form-group">
+                                <label for="record-Others">Others</label>
+                                <input type="text" class="form-control" id="record-Others">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="full-grid pull-left" style="margin-top: 20px;">
+                    <div style="text-align: center;margin:5px 0;">
+                        <span style="text-transform: uppercase; font-size: large;">Remarks</span>
+                        <textarea name="dental_comments" id="dental_comments" style="width: 100%;height: 300px; resize: none;" placeholder="Comments here...."><?php echo $row["comments"]; ?></textarea>
+                    </div>
+                    <div style=" text-align: center;">
+                        <button type="button" id="save-records" class="btn btn-success">SAVE RECORDS</button>
                     </div>
                 </div>
             <?php } ?>
@@ -55,29 +154,35 @@
             isDrawingMode: true
         });
 
-        const canvas_jsonData = $("#canvas_jsonData").val();
-        canvas.loadFromJSON(canvas_jsonData, function() {
-            canvas.renderAll(); 
-        },function(o,object){})
-
-        fabric.Object.prototype.transparentCorners = false;
-
+        // set the canvas width and height
         let canvasWidth = $("#canvas-container").width();
         let canvasHeight = $("#canvas-container").height();
         canvas.setWidth(canvasWidth);
         canvas.setHeight(canvasHeight);
 
-        fabric.Image.fromURL("../img/Tooth-Types_Adult.png", function (img){
-            const center = { x: canvasWidth/2, y: canvasHeight/2};
-            img.set({
-                hasRotatingPoint: false,evented: false, selectable: false, stroke: 1, strokeDashArray: [5, 5], strokewidth:2,
-                left: center.x - (img.width/2), top: center.y - (img.height/2), erasable: false
-            });
-            img.setCoords();
-            canvas.add(img);
-            canvas.sendToBack(img);
-        });
+        const canvas_jsonData = $("#canvas_jsonData").val();
+        if(typeof canvas_jsonData == "undefined" || canvas_jsonData == ""){
+            // load the background image or the dental image diagram if the user doesn't have previous records
+            fabric.Image.fromURL("../img/dental_diagram.png", function (img){
+                const center = { x: canvasWidth/2, y: canvasHeight/2};
+                const imgScaleX = canvasHeight/img.width;
 
+                img.set({
+                    hasRotatingPoint: false, evented: false, selectable: false, stroke: 1, strokeDashArray: [5, 5], strokewidth:2,
+                    "scaleX": parseFloat(imgScaleX), left: center.x - ((img.width*imgScaleX)/2), top: center.y - (img.height/2), erasable: false
+                });
+                img.setCoords();
+                canvas.add(img);
+                canvas.sendToBack(img);
+            });
+        }
+        else {
+            // if the user already has existing records then just get the canvas data and render it
+            canvas.loadFromJSON(canvas_jsonData, function() {
+                canvas.renderAll(); 
+            },function(o,object){});
+        }
+        
         let drawingColorEl = $("#drawing-color"),
             drawingLineWidthEl = $("#drawing-line-width"),
             drawingEraserEl = $("#drawing-eraser");
@@ -102,6 +207,7 @@
             ]
         });
 
+        // this is to change the color of the brush
         drawingColorEl.on("change", function(){
             let brush = canvas.freeDrawingBrush;
             brush.color = $(this).val();
@@ -110,11 +216,13 @@
             }
         });
 
+        // this is to change the value of the slider
         drawingLineWidthEl.on("change", function(){
             canvas.freeDrawingBrush.width = parseInt($(this).val(), 10) || 1;
             $("#slider").text($(this).val());
         });
 
+        // this is to turn the eraser on and off
         drawingEraserEl.on("change", function(){
             if($(this).is(":checked")){
                 canvas.freeDrawingBrush = new fabric.EraserBrush(canvas);
@@ -128,6 +236,7 @@
             }
         });
 
+        // this to render the value of the brush color and slider value on load
         canvas.freeDrawingBrush.color = drawingColorEl.val();
         canvas.freeDrawingBrush.width = parseInt(drawingLineWidthEl.val(), 10) || 1;
 
@@ -135,7 +244,6 @@
             const id = $("#member_id").val();
             const comments = $("#dental_comments").val();
             const canvas_data = String(JSON.stringify(canvas));
-            console.log(canvas.toJSON());
             $.ajax({
                 type: "POST",
                 url: "save_canvas.php",
@@ -146,10 +254,12 @@
                 },
                 cache: false,
                 success: function(html){
-                    console.log("success");
+                    //TODO .. alert or notify message here
+                    alert("changes have been saved successfully");
                 },
                 error: function (request, status, error) {
-                    console.log(request.responseText);
+                    //catch the error message here
+                    //console.log(request.responseText);
                 }
                 
             }); 

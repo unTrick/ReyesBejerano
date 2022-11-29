@@ -3,11 +3,13 @@
     <div class="container">
 
 	<div class="row">	
+        <div class="full-grid" style="text-align: center;">
+            <img src="../img/dr.png" class="img-rounded">
+        </div>
 						<div class="span3">
 						<?php include('sidebar.php'); ?>
 						</div>
 						<div class="span9">
-							<img src="../img/dr.png" class="img-rounded">
 								<?php include('navbar_dasboard.php') ?>
 						    
 							<?php include('add_service.php'); ?>

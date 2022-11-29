@@ -6119,6 +6119,18 @@ a.badge:focus {
   width: 100%;
 }
 
+.quarter-grid {
+  flex: 0 0 auto;
+  width: 25%;
+  float: left;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  padding: 0px 20px;
+}
+
+
 .form-control {
   display: block;
   width: 100%;
@@ -6144,4 +6156,22 @@ a.badge:focus {
 .form-check-input:checked {
   background-color: #0d6efd;
   border-color: #0d6efd;
+}
+
+textarea {
+  -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.table-link {
+  /* color: white; */
+  font-weight: 600 !important;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.row-link:hover {
+  color: #0c83ff;
+  text-decoration: none;
 }
