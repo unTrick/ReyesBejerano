@@ -6122,7 +6122,6 @@ a.badge:focus {
 .quarter-grid {
   flex: 0 0 auto;
   width: 25%;
-  float: left;
 }
 
 .form-group {
