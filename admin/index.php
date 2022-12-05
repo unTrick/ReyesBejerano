@@ -36,7 +36,7 @@ $result = mysqli_query($conn,$query)or die(mysqli_error($conn));
 $num_row = mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result);
 		if( $num_row > 0 ) {
-			header('location:admin/dasboard.php');
+			header('location:dasboard.php');
 	$_SESSION['id']=$row['user_id'];
 		}
 		else{ ?>

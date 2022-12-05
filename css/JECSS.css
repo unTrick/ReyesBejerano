@@ -6174,3 +6174,10 @@ textarea {
   color: #0c83ff;
   text-decoration: none;
 }
+
+.time-selection {
+  text-align: center; 
+  width: fit-content; 
+  margin: auto !important;
+  padding: 10px 0px;
+}
