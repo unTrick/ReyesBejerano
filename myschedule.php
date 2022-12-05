@@ -38,8 +38,27 @@
 									<td width="100"><?php  echo $row['Number'];?></td>
 									<td><?php  echo $row['date'];  ?></td>
 									<td><?php echo date('h:i A', strtotime($row['time'].":00"));?></td>
-									<td><?php  echo $service_row['service_offer'];?></td>
-									<td><?php  echo $service_row['price'];?></td>
+									<td>
+										<?php // null checking
+											if(empty($service_row['service_offer'])){
+												echo "Service Unavailable";
+											}
+											else {
+												echo $service_row['service_offer'];
+											}
+										?>
+									</td>
+									<td>
+										<?php // null checking
+											if(empty($service_row['price'])){
+												echo "Service Unavailable";
+											}
+											else {
+												echo $service_row['price'];
+											}
+											
+										?>
+									</td>
 								</tr>
 
 							<?php } ?>
