@@ -18,6 +18,7 @@
 							<th>Time</th>
 							<th>Service</th>
 							<th>Price</th>
+							<th>Payment Status</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -59,6 +60,7 @@
 											
 										?>
 									</td>
+									<td><?php  echo $row['payment_status'];  ?></td>
 								</tr>
 
 							<?php } ?>
