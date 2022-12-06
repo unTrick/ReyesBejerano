@@ -22,41 +22,43 @@
 							</div>
 						</div>	
 					
-						<div class="full-grid" id="time-selection-group" style="display: none;">
-							<div class="control-group time-selection" id="time9">
-								<label for="timeSelection1">9:00 AM</label>
-								<div class="controls">
-									<input class="" type="radio" name="timeSelection" value="9" id="timeSelection1" style="display: none">
+						<div id="content-selection-group">
+							<div class="full-grid" id="time-selection-group" style="display: none;">
+								<div class="control-group time-selection" id="time9">
+									<label for="timeSelection1">9:00 AM</label>
+									<div class="controls">
+										<input class="" type="radio" name="timeSelection" value="9" id="timeSelection1" style="display: none">
+									</div>
 								</div>
-							</div>
-							<div class="control-group time-selection" id="time10">
-								<label for="timeSelection2">10:00 AM</label>
-								<div class="controls">
-									<input class="" type="radio" name="timeSelection" value="10" id="timeSelection2" style="display: none">
+								<div class="control-group time-selection" id="time10">
+									<label for="timeSelection2">10:00 AM</label>
+									<div class="controls">
+										<input class="" type="radio" name="timeSelection" value="10" id="timeSelection2" style="display: none">
+									</div>
 								</div>
-							</div>
-							<div class="control-group time-selection" id="time11">
-								<label for="timeSelection3">11:00 AM</label>
-								<div class="controls">
-									<input class="" type="radio" name="timeSelection" value="11" id="timeSelection3" style="display: none">
+								<div class="control-group time-selection" id="time11">
+									<label for="timeSelection3">11:00 AM</label>
+									<div class="controls">
+										<input class="" type="radio" name="timeSelection" value="11" id="timeSelection3" style="display: none">
+									</div>
 								</div>
-							</div>
-							<div class="control-group time-selection" id="time13">
-								<label for="timeSelection4">1:00 PM</label>
-								<div class="controls">
-									<input class="" type="radio" name="timeSelection" value="13" id="timeSelection4" style="display: none">
+								<div class="control-group time-selection" id="time13">
+									<label for="timeSelection4">1:00 PM</label>
+									<div class="controls">
+										<input class="" type="radio" name="timeSelection" value="13" id="timeSelection4" style="display: none">
+									</div>
 								</div>
-							</div>
-							<div class="control-group time-selection" id="time14">
-								<label for="timeSelection5">2:00 PM</label>
-								<div class="controls">
-									<input class="" type="radio" name="timeSelection" value="14" id="timeSelection5" style="display: none">
+								<div class="control-group time-selection" id="time14">
+									<label for="timeSelection5">2:00 PM</label>
+									<div class="controls">
+										<input class="" type="radio" name="timeSelection" value="14" id="timeSelection5" style="display: none">
+									</div>
 								</div>
-							</div>
-							<div class="control-group time-selection" id="time15">
-								<label for="timeSelection6">3:00 PM</label>
-								<div class="controls">
-									<input class="" type="radio" name="timeSelection" value="15" id="timeSelection6" style="display: none">
+								<div class="control-group time-selection" id="time15">
+									<label for="timeSelection6">3:00 PM</label>
+									<div class="controls">
+										<input class="" type="radio" name="timeSelection" value="15" id="timeSelection6" style="display: none">
+									</div>
 								</div>
 							</div>
 						</div>
@@ -132,7 +134,7 @@
 										<div class="controls">
 											<select name="payment_option" id="payment-option">
 												<option value="Cash">Cash at the counter</option>
-												<option value="Card">Card Payment</option>
+												<option value="Card" disabled>Card Payment</option>
 											</select>
 										</div>
 									</div>
@@ -158,17 +160,20 @@
 			}
 		});
 
-		// time selection button style
-		for(x=1;x<7;x++){
-			$("#timeSelection" + x).on("click", function(){
-				let button = $('.time-selection');
-				if(button.hasClass("btn-primary")){
-					button.removeClass("btn-primary");
-				}
-				let selection = $(this).closest(".control-group");
-				$(selection).addClass("btn-primary");
-			});
-		}
+		timeSelection(); // for re-initialization
+        function timeSelection (){
+            // time selection button style
+            for(x=1;x<7;x++){
+                $("#timeSelection" + x).on("click", function(){
+                    let button = $('.time-selection');
+                    if(button.hasClass("btn-primary")){
+                        button.removeClass("btn-primary");
+                    }
+                    let selection = $(this).closest(".control-group");
+                    $(selection).addClass("btn-primary");
+                });
+            }
+        }
 
 		// display available schedule
 		$("#date").on("change", function(){
@@ -180,31 +185,35 @@
 				cache: false,
 				success: function(data){
 
-					// make time selection visible
-					$("#time-selection-group").attr("style","display:block; margin-bottom: 10px");
+					// reload the selection group div first
+                    $("#content-selection-group").load(window.location.href + " #time-selection-group", function() {
+                       
+					   // make time selection visible
+					   $("#time-selection-group").attr("style","display:block; margin-bottom: 10px");
+					   let availableCount = 6;
+					   let schedule = JSON.parse(data); // convert json to javascript array
 
-					let availableCount = 6;
-					let schedule = JSON.parse(data); // convert json to javascript array
-					schedule.forEach(function(index){
-							if(index.date == selectedDate){ // hide the time if it's already taken
-							$("#time" + index.time).attr("style","display:none;");
-							availableCount -= 1;
-							}
-							else{
-							$("#time" + index.time).removeAttr("style");
-							}
-					});
-					
-					// hide the time selection if there are no available schedules for that day
-					// then disable the submit button
-					if(availableCount == 0){
-						$("#time-selection-group").append("<div class='full-grid' id='noAvail' style='text-align: center;'><span> FULLY BOOKED. PLEASE SELECT A DIFFERENT DAY.</span></div>");
-						$("#scheduleSubmit").attr("disabled", true);
-					}
-					else {
-						$("#noAvail").remove();
-						$("#scheduleSubmit").removeAttr("disabled");
-					}
+					   // hide the time if it's already taken
+					   schedule.forEach(function(index) {
+						   if(index.date == selectedDate){
+							   $("#time" + index.time).attr("style","display:none;");
+							   availableCount -= 1;
+						   }
+					   });
+					   
+					   // hide the time selection if there are no available schedules for that day
+					   // then disable the submit button
+					   if(availableCount == 0){
+						   $("#time-selection-group").append("<div class='full-grid' id='noAvail' style='text-align: center;'><span> FULLY BOOKED. PLEASE SELECT A DIFFERENT DAY.</span></div>");
+						   $("#scheduleSubmit").attr("disabled", true);
+					   }
+					   else {
+						   $("#noAvail").remove();
+						   $("#scheduleSubmit").removeAttr("disabled");
+					   }
+
+					   timeSelection(); // re-initialize
+				   });
 				} 
 			});
 		});

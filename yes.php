@@ -32,25 +32,22 @@
 
 					if($isScheduleAvailable){
 						$isPaymentFulfilled = "unpaid";
-						$total_balance = $service_price;
+						$balance = $service_price;
 
 						if($payment_option == "Card"){
 							$isPaymentFulfilled = "paid";
-							$total_balance = "0";
+							$balance = "0";
 							mysqli_query($conn,"insert into payment_history (amount,date,mode_of_payment,member_id) values('$service_price','$date1', '$payment_option','$session_id')")or die(mysqli_error($conn));
 						}
 
 						$payment_balance=mysqli_query($conn,"SELECT * FROM payment_balance WHERE member_id = '$session_id' ")or die(mysqli_error($conn)); 
-						$row_payment_balance=mysqli_fetch_array($payment_balance);
 
-						if($row_payment_balance){
-							while($row_payment_balance){ 
-								$total_balance = $row_payment_balance["total_amount"] + $total_balance;
-								mysqli_query($conn,"UPDATE payment_balance SET total_amount='$total_balance' WHERE member_id='$session_id' ")or die(mysqli_error($conn));
-							}
+						if($row_payment_balance=mysqli_fetch_array($payment_balance)){
+							$total_balance = $row_payment_balance['total_amount'] + $balance;
+							mysqli_query($conn,"UPDATE payment_balance SET total_amount='$total_balance' WHERE member_id='$session_id' ")or die(mysqli_error($conn));
 						}
 						else {
-							mysqli_query($conn,"INSERT INTO payment_balance (total_amount, member_id) VALUES('$total_balance', '$session_id')")or die(mysqli_error($conn));
+							mysqli_query($conn,"INSERT INTO payment_balance (total_amount, member_id) VALUES('$balance', '$session_id')")or die(mysqli_error($conn));
 						}
 						
 						mysqli_query($conn,"insert into schedule (member_id,date, time,service_id,number,payment_status,status) values('$session_id','$date1', '$time1','$service1','1', '$isPaymentFulfilled','Pending')")or die(mysqli_error($conn));
