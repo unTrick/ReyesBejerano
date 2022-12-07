@@ -17,6 +17,22 @@
                     <span style="text-transform: uppercase; font-size: large;">Payment History</span>
                 </div>
                 <div style="text-align: center;margin:5px 0;">
+                    <div class="full-grid" style="text-align: right; margin: 10px 0px;">
+                        <span id="balance-alert-message" style="display: none;">Balance Updated Successfully</span>
+                        <button type="button" id="add-balance" class="btn btn-primary">Add Balance</button>
+                    </div>
+                    <div class="full-grid" id="balance-form" style="display: none; margin: 10px 0px;">
+                        <input type="hidden" id="member-id-balance" value="<?php echo $_GET['id'];?>">
+                        <?php $balance_query=mysqli_query($conn,"SELECT * FROM payment_balance WHERE member_id='$_GET[id]'")or die(mysqli_error($conn));
+                             while($balance_row=mysqli_fetch_array($balance_query)){?>
+                                <input type="hidden" id="current-balance" value="<?php echo $balance_row['total_amount'];?>">
+                            <?php } ?>
+                        <div class="control-group">
+                            <label for="balance-amount">Amount to be added</label>
+                            <input type="number" id="balance-amount" name="balance_amount" value="">
+                        </div>
+                        <button type="button" id="save-updated-balance" class="btn btn-success" style="display: inline-block;">Save</button>
+                    </div>
                     <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered">
                         <thead>
                             <tr>
@@ -41,7 +57,7 @@
                              while($row=mysqli_fetch_array($user_query)){?>
                                 <tr>
                                     <td colspan="2"><span>Balance: </span></td>
-                                    <td><span><?php echo $row['total_amount'];?></span></td>
+                                    <td><span id="total-balance-amount"><?php echo $row['total_amount'];?></span></td>
                                 </tr>
                             <?php } ?>
                         </tbody>
@@ -320,6 +336,41 @@
     </div>
 <script>
     $(document).ready(function(){
+
+        // make the add balance form visible
+        $("#add-balance").on("click", function(){
+            $("#balance-form").toggle("slow");
+        });
+
+        $("#save-updated-balance").on("click", function(){
+            const member_id_balance = $("#member-id-balance").val();
+            const balance_amount = $("#balance-amount").val();
+            const current_balance = $("#current-balance").val();
+            $.ajax({
+                type: "POST",
+                url: "update_member_balance.php",
+                data: {
+                    member_id: member_id_balance,
+                    balance_amount: balance_amount,
+                    current_balance: current_balance
+                },
+                cache: false,
+                success: function(result){
+                    $("#total-balance-amount").text(result);
+                    $("#balance-form").toggle("slow");
+
+                    $("#balance-alert-message").show();
+                    setTimeout(function(){
+                        $("#balance-alert-message").hide();
+                    }, 5000);
+                },
+                error: function (request, status, error) {
+                    //catch the error message here
+                    //console.log(request.responseText);
+                }
+                
+            }); 
+        });
 
         // using fabric.js library for canvas
         let canvas = this.__canvas = new fabric.Canvas('canvas', {
