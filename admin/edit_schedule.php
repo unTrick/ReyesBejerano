@@ -89,7 +89,7 @@
                         $time = $_POST['timeSelection'];
                         $service = $_POST['service'];
 
-						mysqli_query($conn,"UPDATE schedule SET date='$date', time='$time', service_id='$service' WHERE member_id='$session_id' ")or die(mysqli_error($conn));
+						mysqli_query($conn,"UPDATE schedule SET date='$date', time='$time', service_id='$service' WHERE id='$schedule_id' ")or die(mysqli_error($conn));
                         
                     
                         $service_query=mysqli_query($conn,"SELECT * FROM service WHERE service_id='$service'")or die(mysqli_error($conn)); 
