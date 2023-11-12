@@ -1,6 +1,6 @@
 <div class="alert alert-info">
 <thead>  
-
+<th>List of Serivices Offered</th>
 </thead>
 <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">
                             
@@ -10,7 +10,9 @@
                                     <th>Price</th>                                 
                                     </ul>	</div>
     
-					    
+					     <form class="navbar-search pull-right">
+						 <input type="text" class="search-query" placeholder="Search">
+					 	 </form>
                                     </tr>
                                 </thead>
                                 <tbody>

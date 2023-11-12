@@ -1,5 +1,5 @@
 <?php include('header.php'); ?>
-
+	<!-- -->
 		  <div class="navbar navbar-fixed-top navbar-inverse">
 				<div class="navbar-inner">
 					<div class="container">
@@ -21,18 +21,16 @@
 					</div>
 				</div>
 			</div>
-	  
+	   
+	<!-- -->
 <?php include('dbcon.php'); ?>
     <div class="container">
+		<div class="margin-top">
 			<div class="row">
 				<div class="span12">
-			<div class="sti">
-					    <?php include('banner.php'); ?>
+				<?php include('banner.php'); ?>
 				</div>
-						    <div class="login_sign_up">
-		<a rel="tooltip"  data-placement="left" title="Click Here to Login" id="login" href="login.php"  class="btn btn-info btn-large"></i>&nbsp;Login</a>
-		<p><a rel="tooltip"  data-placement="bottom" title="Click Here to Sign UP" id="signup" href="signup.php">Not a Member? Sign Up Now</a></p>
-</div>
+				
 				</div>		
 				<div class="clearfix"></div>
 				<div class="span12">
@@ -46,6 +44,5 @@
 				</div>
 		</div>
 		</div>
-		
     </div>
 <?php include('footer.php') ?>

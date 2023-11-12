@@ -1,5 +1,5 @@
    
-<div class=""></div>
+<div class="alert alert-info">Please Enter The Details Below</div>
 <div class="lgoin_terry">
 <form method="post" class="form-horizontal">
 		<div class="control-group">
@@ -17,12 +17,12 @@
 		<div class="control-group">
 			
 			<div class="controls">
-		
+			<div class="please">Please fill in the fields</div>
 			</div>
 		</div>
 		<div class="control-group">
 			<div class="controls">
-			<button name="submit1" type="submit" class="btn btn-info"></i>&nbsp;Login</button>
+			<button name="submit1" type="submit" class="btn btn-info"><i class="icon-signin icon-large"></i>&nbsp;Login</button>
 			</div>
 		</div>
 

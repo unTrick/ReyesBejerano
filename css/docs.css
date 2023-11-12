@@ -137,6 +137,12 @@ font-weight:bold;
 	border: medium none;
 	font-weight: bold;
 }
+.side_dental{
+ margin-top: 25px;
+}
+.body_img img{
+
+}
 .social_index img{
 	height:50px;
 }
@@ -294,7 +300,7 @@ font-weight:bold;
     width: 220px;
 }
 body {
-	background:#052b4ed6;
+	background:#FFFDD0;
 
   position: relative;
 }
@@ -592,8 +598,8 @@ only screen and (     -o-min-device-pixel-ratio: 2/1) {
   text-align: center;
   padding: 20px 0;
   margin-top: 10px;
-  border-top: 1px solid #005c9a;
-  background-color:#005c9a;
+  border-top: 1px solid #00aff6;
+  background-color:#00aff6;
 }
 .footer p {
   margin-bottom: 0;

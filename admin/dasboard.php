@@ -1,19 +1,17 @@
-<?php include('header.php'); ?>
+	<?php include('header.php'); ?>
 <?php include('session.php'); ?>
     <div class="container">
 
 	<div class="row">	
-		<div class="full-grid" style="text-align: center;">
-            <img src="../img/dr.png" class="img-rounded">
-        </div>
-		<div class="span3">
-			<?php include('sidebar.php'); ?>
-		</div>
-		<div class="span9">
-				<?php include('navbar_dasboard.php') ?>
-			<div class="body_img">
-				<img src="../img/bg.jpg">
-			</div>
-		</div>
+						<div class="span3">
+						<?php include('sidebar.php'); ?>
+						</div>
+						<div class="span9">
+							<img src="../img/dr.png" class="img-rounded">
+								<?php include('navbar_dasboard.php') ?>
+							<div class="body_img">
+								<img src="../img/bg.JPG">
+							</div>
+						</div>
     </div>
 <?php include('footer.php') ?>

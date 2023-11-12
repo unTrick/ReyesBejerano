@@ -1,8 +1,7 @@
 
-<div class="span6">
-				<img src="img/32x32/facebook.png">
-				<img src="img/32x32/twitter.png">
-			
-				  </div>
+<div class="alert alert-info"><strong>Contact US
+    
+</strong></div>
+<div class="about">
 
 </div>

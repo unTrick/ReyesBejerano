@@ -7,7 +7,7 @@
 		<div class="margin-top">
 			<div class="row">
 				<div class="span12">
-					<img src="img/dr.png">
+					<img src="img/dr.jpg">
 					
 
 <hr>

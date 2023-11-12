@@ -64,7 +64,7 @@
 
 		<div class="control-group">
 			<div class="controls">
-			<button name="submit" type="submit" class="btn btn-info"></i>&nbsp;Sign Up</button>
+			<button name="submit" type="submit" class="btn btn-info"><i class="icon-signin icon-large"></i>&nbsp;Sign Up</button>
 			</div>
 		</div>
     </div>

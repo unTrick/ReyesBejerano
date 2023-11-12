@@ -1,6 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "u528708661_JEclinic", "JEclinic12@", "u528708661_JEclinicdb");
-//$conn = mysqli_connect("localhost", "root", "", "u528708661_JEclinicdb");
+$conn = mysqli_connect('localhost','root','','database');
 if(!$conn){
 	echo "Connection Failed: ".mysqli_error($conn);
 	exit;
