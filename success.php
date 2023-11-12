@@ -7,7 +7,7 @@
 		<div class="margin-top">
 			<div class="row">
 				<div class="span12">
-					<img src="img/dr.jpg">
+					<img src="img/dr.png">
 					
 
 <hr>
@@ -34,7 +34,7 @@
 		
 		<div class="control-group">
 			<div class="controls">
-			<button name="submit" type="submit" class="btn btn-info"><i class="icon-signin icon-large"></i>&nbsp;Sign Up</button>
+			<button name="submit" type="submit" class="btn btn-info"><i class="icon-signin icon-large"></i>&nbsp;Sign In</button>
 			</div>
 		</div>
 		

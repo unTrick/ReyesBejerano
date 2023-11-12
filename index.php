@@ -1,48 +1,34 @@
 <?php include('header.php'); ?>
-	<!-- -->
-		  <div class="navbar navbar-fixed-top navbar-inverse">
-				<div class="navbar-inner">
-					<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-						<div class="nav-collapse collapse">
-						<ul class="nav">
-						<li class="active" ><a rel="tooltip"  data-placement="bottom" title="Home" id="home" href="index.php" class=""></i>&nbsp;Home</a></li>
-						<li><a rel="tooltip"  data-placement="bottom" title="Services" id="services" href="services.php" class=""></i>&nbsp;Services</a></li>
-						<li><a rel="tooltip"  data-placement="bottom" title="About Us" id="aboutus" href="about.php" class=""></i>&nbsp;About Us</a></li>
-						<li><a rel="tooltip"  data-placement="bottom" title="Contact Us" id="contactus" href="contact_us.php" class=""></i>&nbsp;Contact US</a></li>
-						
-						
-					 
-						</div>
-					</div>
-				</div>
-			</div>
-	   
-	<!-- -->
 <?php include('dbcon.php'); ?>
-    <div class="container">
-		<div class="margin-top">
-			<div class="row">
-				<div class="span12">
-				<?php include('banner.php'); ?>
-				</div>
+
+<div class="container">
+    <div class="content_box">
+		<div class="left">
+			<div class="contact">
 				
-				</div>		
-				<div class="clearfix"></div>
-				<div class="span12">
-					<?php include('thumbnail.php'); ?>
-				</div>
-				<div class="span12">
-				<?php include('content1.php'); ?>
-				</div>
-				<div class="span12">
-				<?php include('content2.php'); ?>	
-				</div>
+			</div>
 		</div>
+		<div class="right">
+			<div class="right-text">
+				<h2>J&E GUARDAMANO</h2>
+				<h5>DENTAL CLINIC</h5>
+			</div>
+			<div class="right-inductor"></div>
 		</div>
-    </div>
-<?php include('footer.php') ?>
+	</div>
+</div>
+
+<script>
+    var element = document.getElementById("home-page");
+    element.classList.add("active");
+    
+    var element1 = document.getElementById("services-page");
+    element1.classList.remove("active");
+    var element2 = document.getElementById("aboutus-page");
+    element2.classList.remove("active");
+    var element3 = document.getElementById("contactus-page");
+    element3.classList.remove("active");
+    var element4 = document.getElementById("login-page");
+    element4.classList.remove("active");
+</script>
+			

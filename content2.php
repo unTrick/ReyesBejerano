@@ -10,12 +10,9 @@
 					</div>
 					</div>
 					<div class="contact_us">
-						<div class="caption_index_2">VISIT OUR OFFICE</div>	
-						<p>Office Hours</p>
-						<p>Monday - Thursday (8:00 am to 5:00 pm)</p>
-						<p>Monday - Thursday (8:00 am to 5:00 pm)</p>
-						<p>Room 312</p>
-						<p>#7, 1800 A. Guisama st, Marikina, 1800 Metro Manila</p>
+						<div class="caption_index_2">VISIT OUR CLINIC</div>	
+						<p>#7, 1800 A. Guisama st,</p>
+						<p>Marikina, 1800 Metro Manila</p>
 
 					</div>
 					<div class="site_map">

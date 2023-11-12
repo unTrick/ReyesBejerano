@@ -9,10 +9,7 @@
 						<div class="span9">
 							<img src="../img/dr.png" class="img-rounded">
 								<?php include('navbar_dasboard.php') ?>
-						    <div class="alert alert-info">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Users Table</strong>
-                            </div>
+						
 							
 							<?php include('add_note.php'); ?>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">

@@ -1,22 +1,27 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>J&E Dental Clinic</title>
-			<link href="img/log.png" rel="icon">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="img/log.png" rel="icon">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- CSS -->
-			<link href="css/JECSS.css" rel="stylesheet" media="screen">
-			<link href="css/JECSS-responsive.css" rel="stylesheet" media="screen">
-			<link href="css/docs.css" rel="stylesheet" media="screen">
-			<link href="css/diapo.css" rel="stylesheet" media="screen">
-			<link href="css/font-awesome.css" rel="stylesheet" media="screen">
+	<!--<link href="css/JECSS.css" rel="stylesheet" media="screen">-->
+	<!--<link href="css/JECSS-responsive.css" rel="stylesheet" media="screen">-->
+	<!--<link href="css/docs.css" rel="stylesheet" media="screen">-->
+	<!--<link href="css/diapo.css" rel="stylesheet" media="screen">-->
+	<link href="css/font-awesome.css" rel="stylesheet" media="screen">
+	<link href="css/spectrum.css" rel="stylesheet" media="screen">
+	<link href="css/style_content_rev.css" rel="stylesheet">
+	<link href="css/style_rev.css" rel="stylesheet">
 	<!-- js -->			
     <script src="js/jquery-1.7.2.min.js"></script>
     <script src="js/JEJS.js"></script>
     <script src="js/jquery.hoverdir.js"></script>
+	<script src="js/fabric.js"></script>
+	<script src="js/spectrum.js"></script>
 			
-		<?php session_start(); ?>	
-			        <link rel="stylesheet" type="text/css" href="css/style.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<noscript>
 			<style>
 				.da-thumbs li a div {
@@ -120,3 +125,35 @@
 		</script>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="navbar-brand" style="position: absolute;">
+            <a href="index.php" class="d-inline-flex align-items-center" style="color: white; text-decoration:none; font-family: math; font-size: 24px; padding-left: 50px; color: #4f6d7a;">
+                <span><i>J&E Guardamano Dental Clinic</i></span>
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" style="justify-content: right; padding-right: 50px;">
+            <ul class="navbar-nav">
+                <li class="nav-item" id="home-page">
+                    <a class="nav-link" rel="tooltip"  data-placement="bottom" title="Home" id="home" href="index.php">Home</a>
+                </li>
+
+                <li class="nav-item" id="services-page">
+                    <a class="nav-link" rel="tooltip"  data-placement="bottom" title="Services" id="services" href="services.php">Services</a>
+                </li>
+
+                <li class="nav-item" id="aboutus-page">
+                    <a class="nav-link" rel="tooltip"  data-placement="bottom" title="About Us" id="aboutus" href="about.php">About Us</a>
+                </li>
+
+                <li class="nav-item" id="contactus-page">
+                    <a class="nav-link" rel="tooltip"  data-placement="bottom" title="Contact Us" id="contactus" href="contact_us.php">Contact Us</a>
+                </li>
+                
+                <li class="nav-item" id="login-page">
+                    <a class="nav-link" rel="tooltip"  data-placement="bottom" title="Login" id="login" href="login.php"><i class="icon-user"></i></a>
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+</body>

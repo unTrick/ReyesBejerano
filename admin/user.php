@@ -3,16 +3,15 @@
     <div class="container">
 
 	<div class="row">	
+        <div class="full-grid" style="text-align: center;">
+            <img src="../img/dr.png" class="img-rounded">
+        </div>
 						<div class="span3">
 						<?php include('sidebar.php'); ?>
 						</div>
 						<div class="span9">
-							<img src="../img/dr.png" class="img-rounded">
 								<?php include('navbar_dasboard.php') ?>
-						    <div class="alert alert-info">
-                                    <button type="button" class="close" data-dismiss="alert">&times;</button>
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Users Table</strong>
-                            </div>
+						   
 							
 							<?php include('add_user.php'); ?>
                             <table cellpadding="0" cellspacing="0" border="0" class="table  table-bordered" id="example">

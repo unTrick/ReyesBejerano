@@ -24,7 +24,7 @@
 								</div>
 								<div class="control-group">
 									<div class="controls">
-									<button id="login" name="submit" type="submit" class="btn"><i class="icon-signin icon-large"></i>&nbsp;Submit</button>
+									<button id="login" name="submit" type="submit" class="btn"><i class=" icon-large"></i>&nbsp;Submit</button>
 								</div>
 									<?php
 if (isset($_POST['submit'])){
@@ -37,12 +37,12 @@ $num_row = mysqli_num_rows($result);
 		$row=mysqli_fetch_array($result);
 		if( $num_row > 0 ) {
 			header('location:dasboard.php');
-	$_SESSION['id']=$row['user_id'];
+			$_SESSION['id']=$row['user_id'];
 		}
 		else{ ?>
 		<br>
 		<br>
-	<div class="alert alert-danger">!Access Denied</div>	
+	<div class="alert alert-danger">Incorrect Username or Password!</div>	
 <?php		}
 		
 		}
@@ -56,4 +56,3 @@ $num_row = mysqli_num_rows($result);
 		</div>
     </div>
 
-<?php include('footer.php') ?>
